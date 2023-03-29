@@ -7,7 +7,8 @@ Create nice formatted dataframes to view within the Spyder environment:
 ![image](https://github.com/fizban99/rich-dataframe-for-spyder/raw/master/images/prettify_table.png)
 
 # Installation
-Just download the rich_dataframe folder and place it in your working folder.
+Just download the rich_dataframe folder or simply the rich_dataframe.py file and place it in your working folder.
+
 Supports multilevel index and multilevel columns and display the column types below the column names. Shows also basic statistics at the bottom of the table.
 
 Spyder color support in the console is very limited, but enough to help differenciate the different information pieces.
