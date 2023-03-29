@@ -1,56 +1,6 @@
 ###--------------------CUSTOMIZED RICH-DATAFRAME-------------------------###
 # Based, almost directly, on https://github.com/khuyentran1401/rich-dataframe 
-# Building it in because it is small and hasn't been updated much in a while &
-# most importantly because I want to customize how it handles the captioning.
-# I put this in my fork of https://github.com/khuyentran1401/rich-dataframe now .
-# SPECIFIC CUSTOMIZATIONS:
-#-------------------------
-# I don't want the caption describing how many rows or cols shown unless number 
-# of rows or columns is larger than how many are shown.
-# Plus, adding note to install rich.
-# Plus, removing the animation to the 'beat' because it causes weird spacing
-# in Jupyter and I had already turned the speed up so high because I wasn't
-# interested in the animated aspect that the default rich-dataframe makes.
-# To do this and get output to show up even when using `%run` in Jupyter,
-# I had to define the color and style of the columns when first made instead
-# of updating after using the beat, `_add_random_color()`, & `_add_style()`,
-# AND DELETE `with Live()`.
-# Plus, removed `_change_width()` section since I'm not seeing a difference
-# without it when not running animation.
-# Plus, I added a setting so you could just dislay in terminal or equivalent 
-# in monochrome if you didn't like the color features Rich-dataframe adds
-# but like the table styling it allows. More like a plainer style but the 
-# table still is easy to read in the terminal, like 
-# https://stackoverflow.com/a/72747970/8508004 , but better because header 
-# handled by rich-dataframe.
-#-------------------------
-# Development/Trouble-shooting cycle that worked best for developing my
-# custom implementation:
-# Starting a MyBinder session from 
-# https://github.com/binder-examples/requirements and installing only `rich`
-# and then runningan edited version of `example.py` from 
-# https://github.com/fomightez/rich-dataframe allowed me to see I shouldn't 
-# need `rich-dataframe` installed to get run `%run example.py` to show the 
-# output in a JupyterLab cell. EDITS: `example.py` had the entire 
-# `rich_dataframe.py` contents placed in it. I also changed what data it uses
-# because it was annoying to get the large data it used and I wanted a 
-# dataframe I was familiar with. I used the iris dataset that's built into 
-# seaborn, see 
-# https://github.com/mwaskom/seaborn-data . `iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')` or 
-# !curl -OL https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv 
-# can be used to use it with pandas or get it, respecitivey.  
-# I didn't want to install seaborn to keep things simple in the session. Note that 
-# `rich-dataframe` didn't seem to disply `iris` dataframe with the settings 
-# in `example.py`  and so I further changed `example.py` to remove
-# the reference to `first_rows` and `first_cols=False`.
-# Then I could edit the top section from `rich_dataframe.py` to see what 
-# could be removed to allow display of a static dataframe.
-#-------------------------
-# Adding this in this section of my script so only need rich installed if
-# using command line. Use of the main function directly wouldn't necessarily
-# need the code handling printng the dataframe in the terminal and so best
-# rich not required in such cases so not asking user to install something
-# that isn't used.
+
 try:
     from rich import print
     from rich.text import Text
@@ -177,8 +127,8 @@ class DataFramePrettify:
             try:
                 max_value = round_sig( list(df_input.iloc[:,col:col+1].max(numeric_only=False))[0])
             except:
-                self.maxs.append("<mixed types>")
-                self.mins.append("<mixed types>")
+                self.maxs.append("n/a")
+                self.mins.append("n/a")
             else:
                 self.maxs.append(max_value)
                 min_value = round_sig(list(df_input.iloc[:,col:col+1].min(numeric_only=False))[0])

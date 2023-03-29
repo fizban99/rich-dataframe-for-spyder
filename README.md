@@ -1,48 +1,31 @@
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
-[![License: Apache-2.0](https://img.shields.io/badge/Apache-2.0%20v3-blue.svg)](https://github.com/khuyentran1401/rich-dataframe/blob/master/LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/Apache-2.0%20v3-blue.svg)](https://github.com/fizban99/rich-dataframe/blob/master/LICENSE)
 
 # Rich DataFrame
 
-Create animated and pretty Pandas Dataframe or Pandas Series, as shown below:
+Create nice formatted dataframes to view within the Spyder environment:
 
-![image](https://github.com/khuyentran1401/rich-dataframe/blob/master/images/prettify_table.gif?raw=True)
+![image](https://github.com/fizban99/rich-dataframe/blob/master/images/prettify_table.gif?raw=True)
 
 # Installation
-```bash
-pip install rich-dataframe
-```
+Just download the rich_dataframe folder and place it in your working folder.
+
+Build on top of https://github.com/khuyentran1401/rich-dataframe to use it within Spyder. Although Spyder has a nice Dataframe viewer, sometimes it is faster to pretty print the content on the console. The original funtionality has been changed slightly and the parameters as well. 
+
 # Usage
 ## Minimal example
 ```python
-from sklearn.datasets import fetch_openml
-from rich_dataframe import prettify
-
-speed_dating = fetch_openml(name='SpeedDating', version=1)['frame']
-
-table = prettify(speed_dating)
+import pandas as pd
+iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv').set_index('species', append=True)
+prettify(iris)
     
 ```
 
-If you want to pass a non-dataframe object, `rich_dataframe` got it covered too!
-```python 
-from rich_dataframe import prettify
-
-var = {'a': 1, 'b': 3}
-prettify(var)
-```
-![image](https://github.com/khuyentran1401/rich-dataframe/blob/master/images/non_dataframe.png?raw=True)
 ## Parameters
 * **df: pd.DataFrame**
 The data you want to prettify
 * **row_limit : int, optional**
     Number of rows to show, by default `20`
-* **col_limit : int, optional**
-    Number of columns to show, by default `10`
-* **first_rows : bool, optional**
-    Whether to show first n rows or last n rows, by default `True`. If this is set to `False`, show last n rows.
-* **first_cols : bool, optional**
-    Whether to show first n columns or last n columns, by default `True`. If this is set to `False`, show last n rows.
-* **delay_time : int, optional**
-    How fast is the animation, by default `5`. Increase this to have slower animation.
 * **clear_console: bool, optional**
     Clear the console before printing the table, by default True. If this is set to false the previous console input/output is maintained
+* **force_jupyter: bool, optional**
+    Assumes IPython and uses more than the 80 chars of the default console. Default True. 
