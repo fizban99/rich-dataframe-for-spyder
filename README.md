@@ -4,7 +4,7 @@
 
 Create nice formatted dataframes to view within the Spyder environment:
 
-![image](https://github.com/fizban99/rich-dataframe-for-spyder/raw/master/images/prettify_table.gif)
+![image](https://github.com/fizban99/rich-dataframe-for-spyder/raw/master/images/prettify_table.png)
 
 # Installation
 Just download the rich_dataframe folder and place it in your working folder.
