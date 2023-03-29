@@ -1,10 +1,10 @@
-[![License: Apache-2.0](https://img.shields.io/badge/Apache-2.0%20v3-blue.svg)](https://github.com/fizban99/rich-dataframe/blob/master/LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/Apache-2.0%20v3-blue.svg)](https://github.com/fizban99/rich-dataframe-for-spyder/blob/master/LICENSE)
 
 # Rich DataFrame
 
 Create nice formatted dataframes to view within the Spyder environment:
 
-![image](https://github.com/fizban99/rich-dataframe/blob/master/images/prettify_table.gif?raw=True)
+![image](https://github.com/fizban99/rich-dataframe-for-spyder/raw/master/images/prettify_table.gif)
 
 # Installation
 Just download the rich_dataframe folder and place it in your working folder.
