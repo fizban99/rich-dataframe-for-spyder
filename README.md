@@ -1,6 +1,6 @@
 [![License: Apache-2.0](https://img.shields.io/badge/Apache-2.0%20v3-blue.svg)](https://github.com/fizban99/rich-dataframe-for-spyder/blob/master/LICENSE)
 
-# Rich DataFrame
+# Rich DataFrame for Spyder IDE
 
 Create nice formatted dataframes to view within the Spyder environment:
 
