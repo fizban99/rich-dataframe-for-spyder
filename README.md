@@ -30,6 +30,6 @@ The data you want to prettify
 * **row_limit : int, optional**
     Number of rows to show, by default `20`
 * **clear_console: bool, optional**
-    Clear the console before printing the table, by default True. If this is set to false the previous console input/output is maintained
+    Clear the console before printing the table, by default False to maintain previous console input/output. If this is set to True, the console is cleared.
 * **force_jupyter: bool, optional**
     Assumes IPython and uses more than the 80 chars of the default console. Default True. 
