@@ -13,7 +13,7 @@ Supports multilevel index and multilevel columns and displays the column types b
 
 Spyder color support in the console is very limited, but enough to help differentiate the different information pieces.
 
-Build on top of https://github.com/khuyentran1401/rich-dataframe and https://github.com/fomightez/rich-dataframe to use it within Spyder. Although Spyder has a nice Dataframe viewer, sometimes it is faster to pretty print the content on the console. The original funtionality has been changed slightly and the parameters as well. 
+Build on top of https://github.com/khuyentran1401/rich-dataframe and https://github.com/fomightez/rich-dataframe to use it within Spyder. Although Spyder has a nice Dataframe viewer, sometimes it is faster to pretty print the content on the console. The original functionality has been changed slightly and the parameters as well. 
 
 # Usage
 ## Minimal example
